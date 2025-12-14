@@ -9,13 +9,17 @@ import '../../features/profile/presentation/screens/edit_profile_screen.dart';
 import '../../features/profile/presentation/screens/permissions_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
-  final authState = ref.watch(authStateProvider);
-  final profileState = ref.watch(profileControllerProvider);
-  
+  // Use a Notifier to trigger router refreshes
+  final routerDataNotifier = RouterNotifier(ref);
+
   return GoRouter(
     initialLocation: '/',
-    refreshListenable: AuthStateListenable(authState, profileState),
+    refreshListenable: routerDataNotifier,
     redirect: (context, state) {
+      final authState = ref.read(authStateProvider);
+      final profileState = ref.read(profileControllerProvider);
+      final currentUser = ref.read(currentUserProvider);
+      
       final isLoggedIn = authState.asData?.value.session != null;
       final isWelcome = state.uri.toString() == '/welcome';
       final isPermissions = state.uri.toString() == '/permissions';
@@ -29,27 +33,35 @@ final routerProvider = Provider<GoRouter>((ref) {
       // 2. Logged in, check profile for onboarding
       final profile = profileState.value;
       
-      // If profile is loading, redirect to /loading to avoid flashing Home
-      if (profileState.isLoading) {
+      // If profile is loading, or we have a profile mismatch (stale data from prev user), show loading.
+      // We only skip loading if we have a valid value AND it belongs to the current user.
+      final isProfileLoading = profileState.isLoading;
+      final hasValidProfile = profileState.hasValue && profile != null && currentUser != null && profile.id == currentUser.id;
+
+      if (isProfileLoading && !hasValidProfile) {
         if (isLoadingRoute) return null;
         return '/loading';
       }
       
-      // Logic:
-      // If New User (Profile loaded AND onboarding not completed) -> Go to Permissions
-      // We check for actual profile existence to be sure.
+      // If we are technically loading (reloading/updating) but have a valid profile, stay put.
       final isOnboarded = profile?.onboardingCompleted == true;
 
       // Only redirect to permissions if we have a profile (or loaded null) and it's not onboarded.
-      // If profile is null (and not loading), it means we might need to create one, so treating as not onboarded is correct.
-      if (!isOnboarded) {
+      // Use the profile we have (which might be stale if we didn't check above, but we checked above).
+      
+      if (hasValidProfile && !isOnboarded) {
          if (isPermissions) return null;
          return '/permissions';
       }
 
       // 3. Logged in AND Onboarded
       if (isWelcome || isPermissions || isLoadingRoute) {
-        return '/';
+         // Should we support deep linking?
+         // If user requested a specific path (that is not one of the auth/loading paths), let them go there.
+         // But the logic here catches those paths specifically.
+         // If `state.uri` is `/profile`, this block is skipped.
+         // So they stay on `/profile`.
+         return '/';
       }
 
       return null;
@@ -79,15 +91,17 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
           body: const Center(child: Text('Home Screen')),
         ),
-      ),
-      GoRoute(
-        path: '/profile',
-        builder: (context, state) => const ProfileScreen(),
         routes: [
-           GoRoute(
-              path: 'edit',
-              builder: (context, state) => const EditProfileScreen(),
-           ),
+          GoRoute(
+            path: 'profile',
+            builder: (context, state) => const ProfileScreen(),
+            routes: [
+              GoRoute(
+                path: 'edit',
+                builder: (context, state) => const EditProfileScreen(),
+              ),
+            ],
+          ),
         ],
       ),
       GoRoute(
@@ -98,9 +112,13 @@ final routerProvider = Provider<GoRouter>((ref) {
   );
 });
 
-class AuthStateListenable extends ChangeNotifier {
-  final AsyncValue<dynamic> authState;
-  final AsyncValue<dynamic> profileState;
-  
-  AuthStateListenable(this.authState, this.profileState);
+class RouterNotifier extends ChangeNotifier {
+  final Ref _ref;
+
+  RouterNotifier(this._ref) {
+    _ref.listen(authStateProvider, (_, __) => notifyListeners());
+    _ref.listen(profileControllerProvider, (_, __) => notifyListeners());
+    // Also listen to currentUser in case it changes independently (though usually tied to auth)
+    _ref.listen(currentUserProvider, (_, __) => notifyListeners());
+  }
 }

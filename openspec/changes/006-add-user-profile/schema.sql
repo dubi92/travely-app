@@ -28,8 +28,8 @@ create policy "Users can update own profile."
   using ( auth.uid() = id );
 
 -- Set up Storage!
-insert into storage.buckets (id, name)
-  values ('avatars', 'avatars');
+insert into storage.buckets (id, name, public)
+  values ('avatars', 'avatars', true);
 
 create policy "Avatar images are publicly accessible."
   on storage.objects for select

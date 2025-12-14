@@ -1,12 +1,54 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:travely_app/shared/widgets/widgets.dart';
 import '../../presentation/providers/profile_provider.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
+
+  Future<void> _pickImage(BuildContext context, WidgetRef ref) async {
+    final picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    
+    if (image != null) {
+      if (!context.mounted) return;
+      
+      try {
+        await ref.read(profileControllerProvider.notifier).uploadAvatar(File(image.path));
+        
+        if (context.mounted) {
+          final state = ref.read(profileControllerProvider);
+          if (state.hasError) {
+             ScaffoldMessenger.of(context).showSnackBar(
+               SnackBar(content: Text('Failed to update avatar: ${state.error}')),
+             );
+          } else {
+             ScaffoldMessenger.of(context).showSnackBar(
+               const SnackBar(content: Text('Avatar updated successfully')),
+             );
+          }
+        }
+      } catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+             SnackBar(content: Text('Error uploading avatar: $e')),
+          );
+        }
+      }
+    }
+  }
+
+  Future<void> _showEditInfoDialog(BuildContext context, WidgetRef ref, String? fullName, String? phone) async {
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) => _EditInfoDialog(initialName: fullName, initialPhone: phone),
+    );
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -57,13 +99,13 @@ class ProfileScreen extends ConsumerWidget {
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.white, width: 4),
                           boxShadow: [
-                          BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 4)),
-                        ],
+                            BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10, offset: const Offset(0, 4)),
+                          ],
                         ),
                         child: EditableAvatar(
                           imageUrl: profile.avatarUrl,
                           initials: initials,
-                          onEdit: () => context.push('/profile/edit'),
+                          onEdit: () => _pickImage(context, ref),
                           size: 112, // h-28 w-28 = 112px
                         ),
                       ),
@@ -89,21 +131,21 @@ class ProfileScreen extends ConsumerWidget {
                     icon: Icons.person_outline,
                     title: 'Full Name',
                     value: displayName,
-                    onTap: () => context.push('/profile/edit'),
+                    onTap: () => _showEditInfoDialog(context, ref, profile.fullName, profile.phone),
                   ),
                   _buildDivider(),
                   _buildListTile(
                     icon: Icons.mail_outline,
                     title: 'Email',
                     value: user?.email ?? '',
-                    onTap: () {}, // Email usually not editable here or needs separate flow
+                    onTap: () {}, // Email not editable
                   ),
                   _buildDivider(),
                   _buildListTile(
                     icon: Icons.phone_outlined,
                     title: 'Phone',
                     value: profile.phone?.isNotEmpty == true ? profile.phone! : 'Add phone',
-                    onTap: () => context.push('/profile/edit'),
+                    onTap: () => _showEditInfoDialog(context, ref, profile.fullName, profile.phone),
                   ),
                 ]),
                 
@@ -245,11 +287,8 @@ class ProfileScreen extends ConsumerWidget {
   }
   
   Widget _buildCurrencyTile(BuildContext context, {required String currentCurrency, required ValueChanged<String> onChanged}) {
-      // For simplicity using a simple popup menu or just displaying it.
-      // In a real app this might open a bottom sheet.
       return GestureDetector(
         onTap: () async {
-          // Show bottom sheet or dialog
           final selected = await showModalBottomSheet<String>(
             context: context,
             builder: (ctx) => _CurrencyPicker(selected: currentCurrency),
@@ -294,7 +333,7 @@ class ProfileScreen extends ConsumerWidget {
     required ValueChanged<bool> onChanged,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // slightly less padding as Switch has its own padding
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         children: [
           Icon(icon, color: Colors.grey[400], size: 24),
@@ -323,8 +362,87 @@ class ProfileScreen extends ConsumerWidget {
     
     if (confirmed == true) {
        await ref.read(authControllerProvider.notifier).signOut();
-       // Auto-redirect handled by router listening to authState
     }
+  }
+}
+
+class _EditInfoDialog extends ConsumerStatefulWidget {
+  final String? initialName;
+  final String? initialPhone;
+
+  const _EditInfoDialog({this.initialName, this.initialPhone});
+
+  @override
+  ConsumerState<_EditInfoDialog> createState() => _EditInfoDialogState();
+}
+
+class _EditInfoDialogState extends ConsumerState<_EditInfoDialog> {
+  late TextEditingController _nameController;
+  late TextEditingController _phoneController;
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.initialName);
+    _phoneController = TextEditingController(text: widget.initialPhone);
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _phoneController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _save() async {
+    final profile = ref.read(profileControllerProvider).value;
+    if (profile != null) {
+      await ref.read(profileControllerProvider.notifier).updateProfile(
+        profile.copyWith(
+          fullName: _nameController.text,
+          phone: _phoneController.text,
+        ),
+      );
+      if (mounted) Navigator.pop(context);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+        left: 24,
+        right: 24,
+        top: 24,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('Edit Personal Info', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 24),
+          AppTextField(
+            label: 'Full Name',
+            controller: _nameController,
+            placeholder: 'Enter full name',
+          ),
+          const SizedBox(height: 16),
+          AppTextField(
+            label: 'Phone Number',
+            controller: _phoneController,
+            placeholder: '+1 234 567 8900',
+            keyboardType: TextInputType.phone,
+          ),
+          const SizedBox(height: 24),
+          PrimaryButton(
+            text: 'Save',
+            onPressed: _save,
+          ),
+          const SizedBox(height: 24),
+        ],
+      ),
+    );
   }
 }
 

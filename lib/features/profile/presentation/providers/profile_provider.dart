@@ -31,7 +31,7 @@ class ProfileController extends AsyncNotifier<Profile?> {
   }
 
   Future<void> updateProfile(Profile profile) async {
-    state = const AsyncLoading();
+    state = AsyncLoading<Profile?>().copyWithPrevious(state);
     state = await AsyncValue.guard(() async {
       await ref.read(profileRepositoryProvider).updateProfile(profile);
       return profile;
@@ -43,7 +43,7 @@ class ProfileController extends AsyncNotifier<Profile?> {
     if (user == null) return;
     
     final previousState = state.value;
-    state = const AsyncLoading();
+    state = AsyncLoading<Profile?>().copyWithPrevious(state);
     
     state = await AsyncValue.guard(() async {
       final repo = ref.read(profileRepositoryProvider);
