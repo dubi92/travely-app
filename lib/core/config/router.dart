@@ -5,7 +5,6 @@ import '../../features/auth/presentation/providers/auth_provider.dart';
 import '../../features/auth/presentation/screens/welcome_screen.dart';
 import '../../features/profile/presentation/providers/profile_provider.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
-import '../../features/profile/presentation/screens/edit_profile_screen.dart';
 import '../../features/profile/presentation/screens/permissions_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -95,12 +94,6 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: 'profile',
             builder: (context, state) => const ProfileScreen(),
-            routes: [
-              GoRoute(
-                path: 'edit',
-                builder: (context, state) => const EditProfileScreen(),
-              ),
-            ],
           ),
         ],
       ),
