@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calm Journey - Map View</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white h-screen overflow-hidden flex flex-col relative">
+<div class="absolute inset-0 z-0 bg-gray-200 dark:bg-gray-800">
+<div class="w-full h-full bg-cover bg-center opacity-80 dark:opacity-40" data-alt="Light gray stylized map of Kyoto streets and parks with subtle water features" data-location="Kyoto" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrcjhqpCvrXWRH0SKm2EDGcI0FXdZW_LIgIlWAGDsNFsfkdCifLjBcAfw2Wsr4Wvmp5tmDKED2uagLl-HrCuror5ubUrT0ucg2b1F_GBf-bCW8o834q9lMPHEQqYzmvEFxRxtcwNc1g89J_BQA5UxogwTSYcZxKkHxIbJWHteZSPM3V0mmzVLNn5z6Q1tsGWdlpiv_y-6dPcMoxDKhpS5rgbl97c5xYeSnsfO46lGZiHFgN-rtfO3eevoIa7bEyz7ubPJRQExjSCA');">
+</div>
+<button class="absolute top-[30%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 group">
+<div class="bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg border border-gray-100 dark:border-gray-600 transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-[20px]">restaurant</span>
+</div>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 bg-white/90 dark:bg-black/80 rounded text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm">
+                Ramen Sen
+            </div>
+</button>
+<button class="absolute top-[45%] left-[75%] transform -translate-x-1/2 -translate-y-1/2 group">
+<div class="bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg border border-gray-100 dark:border-gray-600 transition-transform hover:scale-110">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-[20px]">museum</span>
+</div>
+</button>
+<button class="absolute top-[52%] left-[48%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/30 rounded-full animate-ping"></div>
+<div class="relative bg-primary text-white p-3 rounded-full shadow-xl shadow-primary/40 border-2 border-white dark:border-gray-800 transform scale-110">
+<span class="material-symbols-outlined text-[24px]">temple_buddhist</span>
+</div>
+<div class="absolute top-[90%] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-primary"></div>
+</div>
+</button>
+<button class="absolute top-[25%] left-[60%] transform -translate-x-1/2 -translate-y-1/2">
+<div class="bg-white dark:bg-gray-700 size-10 flex items-center justify-center rounded-full shadow-lg border-2 border-primary text-primary font-bold text-sm">
+                3
+            </div>
+</button>
+</div>
+<div class="relative z-10 flex flex-col gap-4 pointer-events-none">
+<div class="pt-12 px-4 pb-2 bg-gradient-to-b from-white/90 via-white/60 to-transparent dark:from-black/80 dark:via-black/40 pointer-events-auto">
+<div class="flex items-center justify-between gap-4">
+<button class="size-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1 text-center">
+<h1 class="text-lg font-bold text-slate-900 dark:text-white shadow-sm drop-shadow-md">Kyoto Trip</h1>
+<p class="text-xs text-slate-600 dark:text-gray-300 font-medium bg-white/50 dark:bg-black/50 inline-block px-2 py-0.5 rounded-full backdrop-blur-sm">Oct 12 - Oct 18</p>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-sm text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">list</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-4 overflow-x-auto no-scrollbar pb-4 pointer-events-auto">
+<div class="flex gap-3 w-max">
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 text-slate-700 dark:text-gray-200 px-5 shadow-lg shadow-slate-900/5 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<p class="text-sm font-medium leading-normal">Food</p>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 text-slate-700 dark:text-gray-200 px-5 shadow-lg shadow-slate-900/5 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]">museum</span>
+<p class="text-sm font-medium leading-normal">Sights</p>
+</button>
+</div>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 flex flex-col gap-3">
+<button class="size-10 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 shadow-md text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+<div class="flex flex-col rounded-xl bg-white dark:bg-gray-800 shadow-md overflow-hidden">
+<button class="size-10 flex items-center justify-center text-slate-800 dark:text-white border-b border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="size-10 flex items-center justify-center text-slate-800 dark:text-white">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</div>
+<div class="flex-1"></div>
+<div class="relative z-20 mx-4 mb-8">
+<div class="flex flex-col bg-white dark:bg-gray-800 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden">
+<div class="flex items-center justify-center pt-3 pb-1 w-full" id="drag-handle">
+<div class="h-1 w-10 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+</div>
+<div class="p-4 pt-2">
+<div class="flex gap-4">
+<div class="flex flex-col flex-1 gap-3">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Kinkaku-ji Temple</h3>
+<div class="flex items-center bg-green-100 dark:bg-green-900/30 px-1.5 py-0.5 rounded text-xs font-bold text-green-700 dark:text-green-400">
+                                    4.8 <span class="material-symbols-outlined text-[12px] ml-0.5">star</span>
+</div>
+</div>
+<p class="text-primary text-sm font-medium mt-1">10:00 AM - 11:30 AM</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1 line-clamp-2">Golden Pavilion Zen Temple. A top floor covered in gold leaf.</p>
+</div>
+<div class="flex gap-2 mt-1">
+<button class="flex-1 flex items-center justify-center h-10 px-4 rounded-xl bg-primary text-white text-sm font-semibold shadow-md shadow-primary/20 active:bg-primary/90 transition-colors gap-2">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+                                Directions
+                            </button>
+<button class="size-10 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-gray-700 text-slate-600 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="w-24 h-32 shrink-0 rounded-xl bg-gray-200 dark:bg-gray-700 bg-cover bg-center overflow-hidden shadow-sm" data-alt="Golden Pavilion temple reflecting on water surrounded by trees" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC88nFLRX9dEErefmTSmAgD0udpnSSNsOF9tT9vlagLAyLzjjqMblnfIop8g-SlOoT9XaY4Aq_YdvTD0lYu7CmCNcaXVPAHWnCA2R-1mD9Q7j7Fay8K6mfl37r9YpkBO_nEj2Ths-M-q33Caj4YmGmdzNuGR-UbK2s_O1kMi1-teNa17QPkZaQ3YpWtPPHDGlKtjzM-gO5HCONiro0Pw9g4Ny29cjpEyS_eUuaawX_rd89pPIpWXGMGdK9z2RRQG1PkF68aiPHCBJk');">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

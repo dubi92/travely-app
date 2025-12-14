@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Itinerary Overview - Calm Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a242f",
+                        "text-primary-light": "#111418",
+                        "text-primary-dark": "#f0f2f4",
+                        "text-secondary-light": "#637588",
+                        "text-secondary-dark": "#9ba8b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        "soft": "0 2px 8px -2px rgba(0, 0, 0, 0.05), 0 4px 16px -4px rgba(0, 0, 0, 0.02)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark min-h-screen flex flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between px-4 py-3">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-text-primary-light dark:text-text-primary-dark">
+<span class="material-symbols-outlined">home</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-lg font-bold leading-tight tracking-tight">Trip to Kyoto</h2>
+<p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-medium">Oct 12 - Oct 20</p>
+</div>
+<div class="size-10"></div>
+</div>
+<div class="w-full overflow-x-auto no-scrollbar py-3 pl-4 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-background-dark">
+<div class="flex gap-3 pr-4 min-w-max">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-sm transition-transform active:scale-95">
+<span class="text-sm font-semibold">Day 1</span>
+<span class="text-xs opacity-80 font-normal">Mon 12</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary-light dark:text-text-secondary-dark px-5 transition-colors active:scale-95">
+<span class="text-sm font-medium">Day 2</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary-light dark:text-text-secondary-dark px-5 transition-colors active:scale-95">
+<span class="text-sm font-medium">Day 3</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary-light dark:text-text-secondary-dark px-5 transition-colors active:scale-95">
+<span class="text-sm font-medium">Day 4</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-card-dark border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 text-text-secondary-light dark:text-text-secondary-dark px-5 transition-colors active:scale-95">
+<span class="text-sm font-medium">Day 5</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 py-6 pb-24">
+<div class="group relative grid grid-cols-[60px_1fr] gap-x-4 mb-2">
+<div class="flex flex-col items-center pt-1">
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">09:00</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">AM</span>
+<div class="w-0.5 bg-gray-200 dark:bg-gray-700 h-full mt-2 rounded-full"></div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 mb-6 transition-transform active:scale-[0.99]">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">restaurant</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Done</span>
+</div>
+</div>
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark mb-1">Breakfast at Nishiki Market</h3>
+<div class="flex items-center gap-1 mb-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm">Nakagyo Ward, Kyoto</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Woman smiling portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a smiling woman with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHUR9Cf_Ody8FHKDMQa8erJFgnevCEfwICCqxkPxBMrWFgnvUj4tbcDGJ9TQRIBhrPJnndgoFKq9SBcQplyVk32SwE0_GOFCmiA90ZFrpN9RDF1BhzUcBqpfBRxXLmp6ppOPxTj2THhBTebuThpz3xFLt2e1wCUwiKIqTRYL9VScfFpD6Z-jDJ-Qlg8ZyUb46gfKwzopSto2GUwNfU-XZFzesdbrEX-M1GUqMa5_OdD8ygfevy0o6s8UFVSYrBfCYJ2irsTjLjmwA"/>
+<img alt="Man portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a man looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4YjZ-YNIDFptmlv8RdErgQH22W65ReRTblcjfn5oOMCnok89B4vkTA7NeZ2N0huR3w1ozBtjkUAgsrcoU0L7Ql3ng2myEkdYfjEyNunr5mEhbh0lOISB_8I1Y5wD7SDfLVFHPpbHpaatZSCVK2vibRRjauV0af91TBwaDQF7aGQ7TTZH1NBZQSkRn57gkK_pNEwpMUpgagCc2xz1EtTeZPwm1ZpAvWyEJyA15Q6oAANWQZ8EaaxZBv3NBspem2M4Jy18AuwYDazo"/>
+</div>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">JP¥ 3,500</span>
+</div>
+</div>
+</div>
+<div class="group relative grid grid-cols-[60px_1fr] gap-x-4 mb-2">
+<div class="flex flex-col items-center pt-1">
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">11:30</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">AM</span>
+<div class="w-0.5 bg-gray-200 dark:bg-gray-700 h-full mt-2 rounded-full"></div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 mb-6 transition-transform active:scale-[0.99]">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">temple_buddhist</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">Booked</span>
+</div>
+</div>
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark mb-1">Visit Fushimi Inari Shrine</h3>
+<div class="flex items-center gap-1 mb-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm">Fushimi Ward, Kyoto</p>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+<img alt="Fushimi Inari Shrine gates" class="w-full h-full object-cover" data-alt="Orange torii gates of Fushimi Inari shrine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmRhEIG1njmaRSchGExev-b4--TyAKCfFaNBzm7K3wfwmm8Hv1rrzgZ86kqGLOU8GbETEM5pt8yoa-SCRQDnc1TDy77PgsLe1CA4loRZUNGTyeNKj0u2kEiNcDuB30ZGYv2cdTv1EyjMu296zNuGBcPIyBIcLwY1EKViHZLRgoauFNWo_yk023Dj56v3iNopAao2_crsbt-RTOF1odCJhUc-olPv0tMbiDmtmxI-h6dNv4Sv5hw3oXuX-f00pDEqvMOwa-SdKz1vY"/>
+</div>
+<div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Woman smiling portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a smiling woman with glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDurJf6WmrEn3eb1TJINwch1tDXp5K0rglU9w9oVl0UypaV6zGV6uFnc7BPiu_FIoGDvS1BzHuj__4ibY4B_I0P3iFA87lS7XIuhyAz6xZ-DFrXPNYNYvZFqaGKjT7Pwsyfu6m6UQ1VRmrYNN3NS4hldsj8zxHbku-uSC94ekcqi9qZK6mDzyzr5BLRU1UfkXW0jD1alFZIyCtKYeb_bklF4JFwzyfVVqCJVeif2UusJX12aXghXP41HeS4398PyxQKvFNk5tH3Vms"/>
+<img alt="Man portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a man looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxtbjwI8VrnQlkF-lpEvVBeWSMnGEu7s7TQJKlmcQvLm8ByQpZFW1F1e7tlDvSPkDUBIo8tveJnruAPCDd6FzjUCF0YhlEZ2NLGFfYpKzZtRBDqgMMmsFyFuOSOlas6owjWrv4BdQe6Xv-huYfqMm9RRbGzRsACGC-dIxpHsMtkKqv10TBrdUbaJq83bl9MO86lTk1xwTKJ20iByFPMHyBUrrrCAYyUGrArA0YyrMiHCVhQWqCalZO4NQZjwQoZhbflCPesLTxLc8"/>
+<img alt="Woman portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a woman looking away" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37pkrZX8aXtWofODrGIwa6t8i-0Xyu9Ce28pxwnm4dtvnfefE9H5HteonRzAynMybF6Jhjg_KDM-jd0N3MAErsxYgkoj02qriYGbPT1-MW1oIxYYA7ftkZY3HWyJWqMNY7kgbeXRrqvonElKw_YE-s6hsxTTITkSr1YQkfs4WirPPekKWSvNAGdUmg_pLISg57PsidEP65Qn2qcEOckbE4hoBHJ1qMmA1ZzdbRHi-gaZxjQSbaOfUo-g97gscBQedlrqVpNVZrKo"/>
+</div>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Free Entry</span>
+</div>
+</div>
+</div>
+<div class="group relative grid grid-cols-[60px_1fr] gap-x-4 mb-2">
+<div class="flex flex-col items-center pt-1">
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">02:00</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">PM</span>
+<div class="w-0.5 bg-gray-200 dark:bg-gray-700 h-full mt-2 rounded-full"></div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 mb-6 transition-transform active:scale-[0.99]">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">ramen_dining</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400">Planned</span>
+</div>
+</div>
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark mb-1">Lunch at Ramen Sen no Kaze</h3>
+<div class="flex items-center gap-1 mb-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm">Nakagyo Ward, Kyoto</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Man portrait" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark object-cover" data-alt="Portrait of a man looking forward" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtFDPLrOfY0rko1Szyyq_ktznm8q-UdeXlkC8z-LHZj7kELgXi5b95F8GR02jqwol1B3GAy0DWBDY2y5KlntSgsTBUwNEyLU_nv3pzt65vyoxlIR3ghSwfRnHkwMqQz_d4JHMmUsvU-DFKNwcjRyAnukotrVmmCAWfJYTWLhfMJr2hujfSjymaHW6f8UOfYZH7yfBDSrjgvwSR291eec2fADVj00c-sT3szrnjCdt0elxvwaidvYP97qFVlgZh8LuG_6R00VUuz04"/>
+</div>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Est. JP¥ 1,200</span>
+</div>
+</div>
+</div>
+<div class="group relative grid grid-cols-[60px_1fr] gap-x-4">
+<div class="flex flex-col items-center pt-1">
+<span class="text-sm font-bold text-text-primary-light dark:text-text-primary-dark">07:00</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark">PM</span>
+<div class="w-0.5 bg-gradient-to-b from-gray-200 to-transparent dark:from-gray-700 h-full mt-2 rounded-full"></div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 shadow-soft border border-gray-100 dark:border-gray-800 transition-transform active:scale-[0.99]">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bed</span>
+<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">Booked</span>
+</div>
+</div>
+<h3 class="text-base font-bold text-text-primary-light dark:text-text-primary-dark mb-1">Check-in at Ryokan</h3>
+<div class="flex items-center gap-1 mb-3 text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<p class="text-sm">Gion District</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-card-dark bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-[8px] font-bold text-text-secondary-light dark:text-text-secondary-dark">+2</div>
+</div>
+<span class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Paid</span>
+</div>
+</div>
+</div>
+<div class="h-10"></div>
+</main>
+<div class="fixed bottom-24 right-5 z-40">
+<button class="flex h-14 w-auto items-center justify-center gap-2 rounded-xl bg-primary px-5 text-white shadow-lg shadow-blue-500/30 transition-all hover:bg-blue-600 active:scale-95">
+<span class="material-symbols-outlined text-[24px]">add</span>
+<span class="font-bold text-sm tracking-wide">Activity</span>
+</button>
+</div>
+<nav class="fixed bottom-0 w-full bg-white/90 dark:bg-card-dark/95 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 z-50 safe-area-pb">
+<div class="flex justify-around items-center h-[70px] pb-2">
+<button class="flex flex-col items-center justify-center w-full h-full text-primary">
+<span class="material-symbols-outlined filled text-[26px]">calendar_month</span>
+<span class="text-[10px] font-medium mt-1">Itinerary</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined text-[26px]">receipt_long</span>
+<span class="text-[10px] font-medium mt-1">Expenses</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined text-[26px]">call_split</span>
+<span class="text-[10px] font-medium mt-1">Split</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-medium mt-1">Setting</span>
+</button>
+</div>
+</nav>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .safe-area-pb {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .material-symbols-outlined.filled {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+
+</body></html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calm Journey - Create Trip</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white antialiased overflow-x-hidden min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm pt-4 pb-2 flex flex-col shadow-sm transition-all">
+<div class="px-4 flex items-center justify-between mb-4">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[#111418] dark:text-white text-2xl font-normal">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight text-[#111418] dark:text-white">Create Trip</h2>
+<div class="w-10"></div>
+</div>
+<div class="flex items-center justify-center w-full px-6 mb-2">
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-sm font-bold shadow-sm ring-2 ring-primary/20">1</div>
+<div class="w-10 h-[2px] bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 text-sm font-bold">2</div>
+<div class="w-10 h-[2px] bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 text-sm font-bold">3</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col w-full max-w-md mx-auto px-4 py-6">
+<div class="mb-8">
+<h1 class="text-3xl font-extrabold tracking-tight text-[#111418] dark:text-white mb-2">Let's start your journey</h1>
+<p class="text-[#637588] dark:text-gray-400 text-base font-normal">Tell us the basics to get your itinerary started.</p>
+</div>
+<form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+<div class="flex flex-col gap-2">
+<label class="text-base font-medium text-[#111418] dark:text-gray-200" for="trip-name">Trip name</label>
+<div class="relative">
+<input class="form-input block w-full rounded-xl border-none bg-white dark:bg-gray-800 text-[#111418] dark:text-white placeholder:text-[#9ca3af] h-14 px-4 shadow-sm focus:ring-2 focus:ring-primary/50 transition-all" id="trip-name" placeholder="e.g. Summer Vacation 2024" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none material-symbols-outlined">edit</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-base font-medium text-[#111418] dark:text-gray-200" for="destination">Destination</label>
+<div class="relative flex items-center">
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-primary flex items-center pointer-events-none">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<input class="form-input block w-full rounded-xl border-none bg-white dark:bg-gray-800 text-[#111418] dark:text-white placeholder:text-[#9ca3af] h-14 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/50 transition-all" id="destination" placeholder="Search city or country" type="text"/>
+</div>
+<button class="self-start mt-1 text-primary text-sm font-bold flex items-center gap-1 hover:opacity-80 transition-opacity" type="button">
+<span class="material-symbols-outlined text-lg">add</span>
+                    Add another destination
+                </button>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-base font-medium text-[#111418] dark:text-gray-200">Dates</label>
+<div class="flex gap-3">
+<div class="flex-1 relative group">
+<label class="sr-only" for="start-date">Start Date</label>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors pointer-events-none flex items-center">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<input class="form-input block w-full rounded-xl border-none bg-white dark:bg-gray-800 text-[#111418] dark:text-white placeholder:text-[#9ca3af] h-14 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" id="start-date" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="Start" type="text"/>
+</div>
+<div class="flex items-center text-gray-400">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="flex-1 relative group">
+<label class="sr-only" for="end-date">End Date</label>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors pointer-events-none flex items-center">
+<span class="material-symbols-outlined">event</span>
+</div>
+<input class="form-input block w-full rounded-xl border-none bg-white dark:bg-gray-800 text-[#111418] dark:text-white placeholder:text-[#9ca3af] h-14 pl-12 pr-4 shadow-sm focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" id="end-date" onblur="(this.type='text')" onfocus="(this.type='date')" placeholder="End" type="text"/>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 px-1">Popular Destinations</p>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
+<div class="shrink-0 flex items-center gap-3 bg-white dark:bg-gray-800 p-2 pr-4 rounded-full shadow-sm border border-transparent hover:border-primary/30 transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
+<img alt="View of the Taj Mahal in India" class="w-full h-full object-cover" data-location="India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBBXz0ezPdSG1wsOHgh49kJeaOvO8IWmb116S1kIXyZcr417Ehgz1yxErsy9bFWeewIoTIQzloPHMmstAZu-a7rhOI9HXmXdp-eHXqjvUnURVyZ2yjjr6JTV8pqQIqN9ZNRorcwjjmIz7jkLxb3hWmnBPaOBb0c46lu9oJOhvnsNcVl30Gfuj5kLR4lgNqHGa145nW4JJyygA8JvIb4vNm7rITgZvh3wdp-G4Jb8KCl2c6EP2AHl4fOlmeqSvS6XDWvoGRMmbZ6mo"/>
+</div>
+<span class="text-sm font-medium text-[#111418] dark:text-white">India</span>
+</div>
+<div class="shrink-0 flex items-center gap-3 bg-white dark:bg-gray-800 p-2 pr-4 rounded-full shadow-sm border border-transparent hover:border-primary/30 transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
+<img alt="Traditional houses in Kyoto streets" class="w-full h-full object-cover" data-location="Japan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1y4K_UgM2zkR1Jr8wN8vLUqedu4dJgJgwdubirk9Uh7F1w_FsIxwbnSiwucslhxB46BkEMlywjnjdpGBhnznacEQda-J5hklwEqLiU8ULPu6f_PGDpJnPvCWvkQfVCrSrEYux2IYrnIYq63UWQHFD6ZKuN0EdEc6WRtZJa6sZwE928a1ofgUHrgHg85sCNFqCI17WJ4rVYogQQrjgTLnX9vUczUyl2fLIGG5yCr14Zm3FnYr6Ym6uX8kJ4-A0wNLZSrEG4fjUp4"/>
+</div>
+<span class="text-sm font-medium text-[#111418] dark:text-white">Japan</span>
+</div>
+<div class="shrink-0 flex items-center gap-3 bg-white dark:bg-gray-800 p-2 pr-4 rounded-full shadow-sm border border-transparent hover:border-primary/30 transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-gray-200">
+<img alt="Canals of Venice Italy" class="w-full h-full object-cover" data-location="Italy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvVw0yiYw5yGyXb7P_DTOgq-uGznf50FNKRrNZCjUDaJHCoi-Y2oftkyXt4lceVakICh1KMkuJRE9duiV4RmU3K1L3TKDQnQ_siGMsEgBSFTdYRsml06yEYoJS-PYxKOjyRjGtkZKsEsBIcy0pynJjGbvczfoSZzpN-9OpN7yOX3N0BBGptDXU2PHfGuHd0SlVSZdd19DYWNR6a0CDCafD_c0pN62zFzNCHqTc1aFIgFnPBLHofkrU7E4DuyyAoqJRvLi_wL7gaFU"/>
+</div>
+<span class="text-sm font-medium text-[#111418] dark:text-white">Italy</span>
+</div>
+</div>
+</div>
+</form>
+</main>
+<div class="bg-background-light dark:bg-background-dark p-4 pb-8 sticky bottom-0 w-full z-10">
+<div class="absolute bottom-full left-0 w-full h-12 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pointer-events-none"></div>
+<button class="w-full bg-primary hover:bg-blue-600 active:bg-blue-700 text-white font-bold h-14 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]">
+<span>Next</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Expenses Overview - Visualized - Calm Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white overflow-hidden">
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-hidden max-w-md mx-auto shadow-2xl">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 z-10 sticky top-0">
+<button class="mr-3 flex items-center justify-center rounded-xl h-10 w-10 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300">home</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-2xl font-bold leading-tight tracking-tight flex-1">Expenses</h2>
+</div>
+<div class="flex-1 overflow-y-auto pb-28 px-4 no-scrollbar">
+<div class="mt-2 w-full flex flex-col gap-5 rounded-2xl p-5 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium leading-normal">Total Trip Spend</p>
+<p class="text-slate-900 dark:text-white tracking-tight text-4xl font-bold leading-tight tabular-nums mt-1">
+<span class="text-2xl text-slate-400 dark:text-slate-500 align-top mr-1">$</span>1,240.50
+                            </p>
+</div>
+<div class="bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-lg flex flex-col items-end">
+<span class="text-[10px] uppercase text-primary font-bold tracking-wider">Budget</span>
+<span class="text-primary font-bold text-sm tabular-nums">62%</span>
+</div>
+</div>
+<div class="rounded-full bg-slate-100 dark:bg-slate-700 h-2.5 w-full overflow-hidden mt-1">
+<div class="h-full rounded-full bg-primary" style="width: 62%;"></div>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs font-normal text-right tabular-nums">$1,240 / $2,000</p>
+</div>
+<div class="h-px bg-slate-100 dark:bg-slate-700 w-full"></div>
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-3">
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Spending Distribution</p>
+<div class="flex items-center gap-6 justify-between">
+<div class="relative w-28 h-28 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-slate-100 dark:text-slate-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.8"></path>
+<path class="text-orange-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="42, 100" stroke-width="3.8"></path>
+<path class="text-emerald-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-dashoffset="-42" stroke-width="3.8"></path>
+<path class="text-purple-500" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="28, 100" stroke-dashoffset="-72" stroke-width="3.8"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-[10px] text-slate-400 font-medium">Top</span>
+<span class="text-xs font-bold text-slate-900 dark:text-white">Food</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></div>
+<div class="flex-1 flex justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-300">Food &amp; Dining</span>
+<span class="font-bold text-slate-900 dark:text-white tabular-nums">42%</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></div>
+<div class="flex-1 flex justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-300">Sightseeing</span>
+<span class="font-bold text-slate-900 dark:text-white tabular-nums">30%</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-purple-500 shrink-0"></div>
+<div class="flex-1 flex justify-between text-xs">
+<span class="text-slate-600 dark:text-slate-300">Transport</span>
+<span class="font-bold text-slate-900 dark:text-white tabular-nums">28%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-slate-100 dark:bg-slate-700 w-full"></div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Daily Trend</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Oct 10 - Oct 16</p>
+</div>
+<div class="h-24 w-full flex items-end gap-2 pt-4 relative">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-10">
+<div class="w-full h-px bg-slate-900 dark:bg-white"></div>
+<div class="w-full h-px bg-slate-900 dark:bg-white"></div>
+<div class="w-full h-px bg-slate-900 dark:bg-white"></div>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 rounded-full h-[30%] group-hover:bg-primary transition-colors"></div>
+<span class="text-[9px] text-slate-400 font-medium">10</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 rounded-full h-[45%] group-hover:bg-primary transition-colors"></div>
+<span class="text-[9px] text-slate-400 font-medium">11</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-primary rounded-full h-[60%] shadow-sm shadow-blue-500/20"></div>
+<span class="text-[9px] text-slate-900 dark:text-white font-bold">12</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-300 dark:bg-slate-600 rounded-full h-[85%] relative group-hover:bg-primary transition-colors">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[9px] px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$540</div>
+</div>
+<span class="text-[9px] text-slate-400 font-medium">13</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 rounded-full h-[40%] group-hover:bg-primary transition-colors"></div>
+<span class="text-[9px] text-slate-400 font-medium">14</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 rounded-full h-[55%] group-hover:bg-primary transition-colors"></div>
+<span class="text-[9px] text-slate-400 font-medium">15</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-end h-full gap-1 group">
+<div class="w-1.5 bg-slate-200 dark:bg-slate-700 rounded-full h-[20%] group-hover:bg-primary transition-colors"></div>
+<span class="text-[9px] text-slate-400 font-medium">16</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-bold uppercase tracking-wider px-2 pb-3">Oct 12 - Arrival</h3>
+<div class="flex flex-col gap-3">
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-800 px-4 py-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-primary p-0.5" data-alt="Portrait of Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPb4zTQh00ZdleyU-bJPEhlbZslaiOHELBZ12fXcSG5XLsl82__5_2vRTr3FXUYHhTTyKWHqYPFdxlAkDSfSPtXh5k26GZCJCNHflnBW87Vd9H2X0YDIgk-sCVELqIPuKnyk-7ySxwIH74joab1-srgvONDdXR1ldiTEzUiLoQfouO-E-S0cGaHjZSCKq1UFUTE-b8zNXIvgKzPlukt5qKn33-bAJKaMjfRMVWVyC8l-qCMyDhdQng83_8uPmlXk2TmZB_S2qnEdY");'></div>
+<div class="absolute -bottom-1 -right-1 bg-slate-100 dark:bg-slate-700 rounded-full p-1 border border-white dark:border-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-slate-600 dark:text-slate-300">local_taxi</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start w-full">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate pr-2">Uber to Hotel</p>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal tabular-nums">$45.00</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium leading-normal flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                    Paid by Alex
+                                </p>
+<span class="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium">Transport</span>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-800 px-4 py-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-purple-400 p-0.5" data-alt="Portrait of You" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGbxgnPuPXpk9KgfjFphnfGaWc_n-3DalvmZMoN-slZSBU24kDgVsVpaD5jqEJf062KCuRTFVOILM2F03AOJZ8F29wn2jWy1a9AfrE56BWrkPX03pz54KT8tVirspQKvq6aC4CKvAycQSRVoIKNNvUHAqm1WclkP-VnHpI_B5KnP9kQw5SqQhrR-H4fp6YYk1mREXDPZLm-lGTGrPCLO36oZCjFES3jCwgctHbFTrWn880LWBmwk0xAOImedc9whuSbmmt7SDjoDY");'></div>
+<div class="absolute -bottom-1 -right-1 bg-slate-100 dark:bg-slate-700 rounded-full p-1 border border-white dark:border-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-slate-600 dark:text-slate-300">restaurant</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start w-full">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate pr-2">Ramen Lunch</p>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal tabular-nums">$32.00</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium leading-normal flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                    Paid by You
+                                </p>
+<span class="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium">Food</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h3 class="text-slate-500 dark:text-slate-400 text-sm font-bold uppercase tracking-wider px-2 pb-3">Oct 13 - Exploration</h3>
+<div class="flex flex-col gap-3">
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-800 px-4 py-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-emerald-400 p-0.5" data-alt="Portrait of Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaOvojJeZhAV9sMblKFv4XzkgFDBB97kHIdtSgXZTIbeedm2UEWZbvA4FemaUBXShWayKwzJnOBZcyIEAstgIZw8PbOiVVmmNI9mG0aafGEq86k_-dpsJPb7xazdN0fMqPje7j9CWOWt1V-EMBy3Y0OXFoftEpLZQR-zJUUTWS0mpN34G90khxX7H-bfgE-ALHf5oP9jZFD0GCLnbUJP4WOBg0bSM8o2XlkT8j8-3BBEpGKkihY5Z_RGa6XXy9JHsc4YPN4ciC__A");'></div>
+<div class="absolute -bottom-1 -right-1 bg-slate-100 dark:bg-slate-700 rounded-full p-1 border border-white dark:border-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-slate-600 dark:text-slate-300">museum</span>
+</div>
+</div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start w-full">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate pr-2">Museum Tickets</p>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal tabular-nums">$60.00</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium leading-normal flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                    Paid by Sarah
+                                </p>
+<span class="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium">Sightseeing</span>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-4 bg-white dark:bg-slate-800 px-4 py-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 opacity-60">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-purple-400 p-0.5" data-alt="Portrait of You" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyrTd2GGIhWTwjsvTiNPy6yYfNiYu8qz0qEDqJmOxabsqEtDrkwcNlC034ECLBZC2Lry8EsSkAcgIxuA5mpQUni-vYk1WuaR-IeFJmm6TG-pdOw1piDEuH1y2xnhdWJ0e3NSS17Ns2mIiQG-Y_QqF9B_UfrBgosEsNZBraScPTN9Qt0c515BhFzPjHlQ4xm2amP5UMwjVyDhyajUj3Pew-LFHPvzwqK4s-ZclzG7MEITIFYgZvAno9eSuY2cUnAcv2anakwI4pD5k");'></div>
+</div>
+<div class="flex flex-col flex-1 justify-center min-w-0">
+<div class="flex justify-between items-start w-full">
+<p class="text-slate-900 dark:text-white text-base font-semibold leading-normal truncate pr-2">Matcha Latte</p>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal tabular-nums">$6.50</p>
+</div>
+<div class="flex justify-between items-center mt-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium leading-normal flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                                    Paid by You
+                                </p>
+<span class="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium">Food</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-10"></div>
+</div>
+<button class="absolute bottom-24 right-4 z-20 flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg shadow-blue-500/30 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="font-bold text-sm">Add Expense</span>
+</button>
+<div class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 h-20 w-full flex justify-around items-start pt-3 z-30 pb-safe">
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">map</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Itinerary</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-primary fill-current">receipt_long</span>
+<span class="text-[10px] font-bold text-primary">Expenses</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">call_split</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Split</span>
+</button>
+<button class="flex flex-col items-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-[10px] font-medium text-slate-400 group-hover:text-primary transition-colors">Setting</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calm Journey - Permissions</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3182ed",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>.toggle-checkbox:checked {
+            right: 0;
+            border-color: #3182ed;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #3182ed;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-slate-900 bg-background-light dark:bg-background-dark dark:text-white transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark">
+<div class="flex w-full bg-transparent p-0">
+<div class="w-full overflow-hidden bg-transparent aspect-[4/3] rounded-b-xl relative shadow-sm">
+<div class="w-full h-full bg-center bg-cover bg-no-repeat" data-alt="Soft blue vector illustration of a paper plane flying over clouds and a map" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkOmfnxwlJCE66Tgpe41ykfa41_z8cQdIbL-SxeBGnpG_n70FYCl3TGkqjpJtOJ7_AzsUugfCbIsVdRBnc73yMioc5cjcNOAr2WAkuuKHtoPS-qVEvqT4YnnSMdajy87fo4n9FsAOjsj7jrHfQwe7kW5BqEiwGKoo7XxqNHlb_DMpjjdaVS5fk1NlZULaBDmfcsY5_kn7X3wEzVgSgzc4g2XAdFRBcSl011IXn1MXRVSf6ON2-qmlUgS3mT2nqgwhMn6PcX0ZRgvE");'>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center px-6 pt-6 pb-2">
+<h1 class="text-[#111418] dark:text-white tracking-tight text-[28px] font-bold leading-tight text-center">
+                Help us guide your journey
+            </h1>
+<p class="text-[#617389] dark:text-slate-400 text-base font-normal leading-normal pt-3 text-center">
+                We need a few permissions to help you plan trips and split bills effortlessly.
+            </p>
+</div>
+<div class="flex flex-col gap-4 px-4 py-6 flex-1">
+<div class="flex gap-4 bg-white dark:bg-[#1A2633] p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 items-center justify-between transition-colors">
+<div class="flex items-start gap-4 flex-1">
+<div class="text-primary flex items-center justify-center rounded-full bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">notifications_active</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold leading-normal">Trip Reminders</p>
+<p class="text-[#617389] dark:text-slate-400 text-sm font-normal leading-snug mt-1">Get notified about upcoming flights and bill updates.</p>
+</div>
+</div>
+<div class="shrink-0 pl-2">
+<label class="relative flex h-[32px] w-[52px] cursor-pointer items-center rounded-full border-none bg-[#e5e7eb] dark:bg-slate-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm transition-all duration-300 transform"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex gap-4 bg-white dark:bg-[#1A2633] p-5 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 items-center justify-between transition-colors">
+<div class="flex items-start gap-4 flex-1">
+<div class="text-primary flex items-center justify-center rounded-full bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-[#111418] dark:text-white text-base font-semibold leading-normal">Local Recommendations</p>
+<p class="text-[#617389] dark:text-slate-400 text-sm font-normal leading-snug mt-1">See travel spots near you and tag locations automatically.</p>
+</div>
+</div>
+<div class="shrink-0 pl-2">
+<label class="relative flex h-[32px] w-[52px] cursor-pointer items-center rounded-full border-none bg-[#e5e7eb] dark:bg-slate-700 p-1 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-[24px] w-[24px] rounded-full bg-white shadow-sm transition-all duration-300 transform"></div>
+<input class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<div class="mt-auto w-full px-6 py-6 flex flex-col gap-3 items-center bg-background-light dark:bg-background-dark">
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold text-base py-4 px-6 rounded-full shadow-lg shadow-blue-500/30 transition-all active:scale-[0.98]">
+                Continue
+            </button>
+<button class="w-full bg-transparent text-[#617389] dark:text-slate-400 hover:text-[#111418] dark:hover:text-white font-medium text-sm py-2 px-6 rounded-full transition-colors">
+                I'll do this later
+            </button>
+</div>
+</div>
+
+</body></html>

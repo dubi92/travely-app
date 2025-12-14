@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calm Journey - Add Activity</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#308ce8",
+                "background-light": "#f6f7f8",
+                "background-dark": "#111921",
+                "surface-light": "#ffffff",
+                "surface-dark": "#1A2633",
+                },
+                fontFamily: {
+                "display": ["Inter", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.5rem", 
+                    "lg": "0.75rem", 
+                    "xl": "1rem", 
+                    "2xl": "1.5rem",
+                    "3xl": "2rem",
+                    "full": "9999px"
+                },
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#111418] dark:text-white transition-colors duration-200">
+<div class="relative flex h-full w-full flex-col max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-x-hidden min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between bg-surface-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 py-3 border-b border-gray-100 dark:border-gray-800 transition-colors">
+<button class="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+                Cancel
+            </button>
+<h1 class="text-lg font-bold text-[#111418] dark:text-white tracking-tight">Add Activity</h1>
+<button class="text-base font-bold text-primary hover:opacity-80 transition-opacity">
+                Save
+            </button>
+</header>
+<main class="flex-1 flex flex-col gap-6 p-4 pb-12">
+<!-- Category Selector -->
+<div class="flex flex-col gap-3">
+<label class="px-1 text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Category</label>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+<!-- Active State -->
+<button class="group flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-3 pr-4 shadow-sm shadow-blue-200 dark:shadow-none transition-all">
+<span class="material-symbols-outlined text-white text-[20px]">flight</span>
+<span class="text-white text-sm font-medium">Flight</span>
+</button>
+<!-- Inactive States -->
+<button class="group flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark pl-3 pr-4 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-all">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[20px]">bed</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium">Hotel</span>
+</button>
+<button class="group flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark pl-3 pr-4 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-all">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[20px]">restaurant</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium">Meal</span>
+</button>
+<button class="group flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark pl-3 pr-4 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-all">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[20px]">local_activity</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium">Activity</span>
+</button>
+<button class="group flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark pl-3 pr-4 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-all">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-[20px]">directions_bus</span>
+<span class="text-[#111418] dark:text-gray-200 text-sm font-medium">Transit</span>
+</button>
+</div>
+</div>
+<!-- Main Info Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-1 shadow-sm">
+<!-- Title Input -->
+<div class="relative group">
+<div class="absolute top-4 left-4 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined">edit</span>
+</div>
+<input class="w-full bg-transparent border-none text-[#111418] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 text-lg font-semibold py-4 pl-12 pr-4 focus:ring-0 rounded-t-xl" placeholder="Activity Title (e.g. Flight to Paris)" type="text"/>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-700 mx-4"></div>
+<!-- Location Input -->
+<div class="relative group">
+<div class="absolute top-4 left-4 text-gray-400 dark:text-gray-500 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<input class="w-full bg-transparent border-none text-[#111418] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 text-base py-4 pl-12 pr-4 focus:ring-0 rounded-b-xl" placeholder="Add location" type="text"/>
+<button class="absolute top-3 right-3 p-1 text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined">map</span>
+</button>
+</div>
+</div>
+<!-- Date & Time -->
+<div class="flex gap-4">
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-2xl p-4 flex flex-col gap-1 shadow-sm relative overflow-hidden group">
+<label class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Starts</label>
+<div class="flex items-center gap-2">
+<span class="text-[#111418] dark:text-white text-base font-medium">Oct 12</span>
+<span class="text-gray-400">at</span>
+<span class="text-primary font-bold">10:00 AM</span>
+</div>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-light dark:bg-surface-dark rounded-2xl p-4 flex flex-col gap-1 shadow-sm relative overflow-hidden group">
+<label class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Ends</label>
+<div class="flex items-center gap-2">
+<span class="text-[#111418] dark:text-white text-base font-medium">Oct 12</span>
+<span class="text-gray-400">at</span>
+<span class="text-[#111418] dark:text-white font-medium">1:00 PM</span>
+</div>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">event</span>
+</div>
+</div>
+</div>
+<!-- Map Preview Integration -->
+<div class="h-32 w-full rounded-2xl overflow-hidden relative shadow-sm">
+<img alt="Map view of Paris streets" class="w-full h-full object-cover opacity-80" data-alt="Map view of Paris streets" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8_EQDxeFM54p_gwt8uNg3-qPI8VVEy5YCvwrUKhzR1CQdAyoWISfc5UtDvLvLwIsYvdfXuBygVJ2R0b1O7i0zmm61BT36Q6uwHPqVyF3h9ZthaOtTQKSWWWmDN2lAugjh0RNfH9POvI_7lwmz3osrVpeBj4NKjblop8q7oa5sTOyMsu3Ti2mnthRzeNbk4WJ8Yr07Ia93X47yqQeghlWUPbrlHI5DwfdJkws6GMTLEtcDPxo3ur-A1EwG0pvKUwppXdUFf7Vs0Wg"/>
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<button class="bg-white/90 dark:bg-surface-dark/90 backdrop-blur text-sm font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-lg">map</span>
+                        View on Map
+                    </button>
+</div>
+</div>
+<!-- Cost Section -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined">attach_money</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Cost</span>
+<div class="flex items-baseline gap-1">
+<span class="text-lg font-bold text-[#111418] dark:text-white">$0.00</span>
+</div>
+</div>
+</div>
+<button class="text-primary text-sm font-bold bg-primary/10 dark:bg-primary/20 px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
+                    Add Expense
+                </button>
+</div>
+<!-- Details Section -->
+<div class="flex flex-col gap-4">
+<h3 class="text-base font-bold text-[#111418] dark:text-white px-1">Details</h3>
+<!-- Notes -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm">
+<label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase mb-2">Notes</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border-none rounded-xl text-[#111418] dark:text-white placeholder:text-gray-400 text-base p-3 focus:ring-1 focus:ring-primary resize-none" placeholder="Add details about gate number, reservation code, or packing list..." rows="3"></textarea>
+</div>
+<!-- Attachments -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<label class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase">Attachments</label>
+<span class="text-xs text-primary font-medium cursor-pointer">View All</span>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+<!-- Add Button -->
+<button class="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center gap-1 hover:border-primary hover:bg-blue-50 dark:hover:bg-blue-900/10 transition-colors">
+<span class="material-symbols-outlined text-primary">add</span>
+<span class="text-[10px] font-medium text-gray-500 dark:text-gray-400">Add File</span>
+</button>
+<!-- File Item 1 -->
+<div class="flex-shrink-0 w-20 h-20 rounded-xl bg-background-light dark:bg-background-dark overflow-hidden relative group border border-gray-100 dark:border-gray-700">
+<!-- PDF Icon Placeholder -->
+<div class="absolute inset-0 flex items-center justify-center text-red-500 bg-red-50 dark:bg-red-900/20">
+<span class="material-symbols-outlined text-3xl">picture_as_pdf</span>
+</div>
+<div class="absolute bottom-0 w-full bg-black/60 py-1 px-1">
+<p class="text-[8px] text-white text-center truncate">Tickets.pdf</p>
+</div>
+</div>
+<!-- File Item 2 -->
+<div class="flex-shrink-0 w-20 h-20 rounded-xl bg-background-light dark:bg-background-dark overflow-hidden relative group border border-gray-100 dark:border-gray-700">
+<img alt="Red nike sneaker shoe thumbnail" class="w-full h-full object-cover" data-alt="Red nike sneaker shoe thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxMo9zxKhCu1hok7ZxpW-RoNiCVBJWsI6JH9DUzd00XPRFix_IKlzFzhGpwGLeT96b-CQ-LIH2gRmHdf4z2viN7yzbocMtIhww7Z41N7H1s48Uhc8galifGuPz08hagZutxz1mQpOyAaIlcYh6_PkUsAGeWIVNzemSPivceK6PhB8-h8KTp_JKqw75SwE8Fr0nqHfBmSOdv11tS44dvrY2HfwaJgQynSPgQFgcFtxG4B12kuBGyIPqTqyFx-yQHlSjtBR71qqs25o"/>
+<div class="absolute bottom-0 w-full bg-black/60 py-1 px-1">
+<p class="text-[8px] text-white text-center truncate">Receipt.jpg</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Delete Action -->
+<div class="mt-4 flex justify-center pb-8">
+<button class="flex items-center gap-2 text-red-500 hover:text-red-600 dark:text-red-400 font-medium px-4 py-2 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+                    Remove Activity
+                 </button>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calm Journey - Trip Settings</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#308ce8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "secondary-text": "#64748b",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1a242f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }.pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-slate-900 dark:text-white overflow-x-hidden">
+<div class="sticky top-0 z-50 flex items-center bg-card-light/90 dark:bg-card-dark/90 backdrop-blur-md p-4 pb-2 border-b border-gray-100 dark:border-gray-800 justify-between">
+<button class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-center rounded-full active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Trip Settings</h2>
+</div>
+<main class="flex-1 pb-32">
+<div class="@container w-full">
+<div class="p-4 pb-0">
+<div class="relative bg-cover bg-center flex flex-col justify-end overflow-hidden bg-gray-200 dark:bg-gray-800 rounded-xl min-h-[200px] shadow-sm" data-alt="Beautiful scenic view of a Japanese temple in Kyoto during summer with greenery" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDpwPqw9V_wK746J8uNXplv1KgTBm2GhO4FmORZ3vXseglZbjvgPXoLgYREYhlfLfhUHuIwkF3vka96gkziEy6fS0Ss_BQWHj7ZH9d06XSzM2YwSQIGd9JqX09ULJNfS1lLNZ1jcfhwra0S3J-JTefJAJCOsww8Tb8d9DuR2VS4aLqSrb6XDwRduHWW2plLqIJnjRwAco-epnEDrg-udfDv-5aAYOdkzP8d4PUCPBNjHYgddQQPb65jGGiIvvHPzwrWGWvZ78qhbA8");'>
+<div class="absolute top-3 right-3 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1">
+<p class="text-white text-xs font-medium">Edit Cover</p>
+</div>
+<div class="flex p-5 flex-col z-10">
+<p class="text-white tracking-tight text-[28px] font-bold leading-tight shadow-black drop-shadow-md">Summer in Kyoto</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 py-4">
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-4 flex flex-col gap-4">
+<label class="flex flex-col flex-1">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal pb-2 ml-1">Trip Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary h-12 placeholder:text-secondary-text p-4 text-base font-normal leading-normal transition-all" value="Summer in Kyoto"/>
+</label>
+<label class="flex flex-col flex-1">
+<p class="text-slate-700 dark:text-gray-300 text-sm font-medium leading-normal pb-2 ml-1">Dates</p>
+<div class="relative">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary h-12 placeholder:text-secondary-text p-4 pl-11 text-base font-normal leading-normal transition-all" value="Aug 12 - Aug 24, 2024"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary-text text-xl">calendar_today</span>
+</div>
+</label>
+</div>
+</div>
+<div class="mt-2">
+<h3 class="text-secondary-text dark:text-gray-400 text-sm font-semibold uppercase tracking-wider px-6 pb-2 pt-2">Management</h3>
+<div class="mx-4 bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden divide-y divide-gray-100 dark:divide-gray-800">
+<div class="flex items-center gap-4 px-4 py-4 justify-between active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">currency_exchange</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal flex-1 truncate">Trip Currency</p>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-secondary-text text-base font-normal leading-normal">USD ($)</p>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 py-4 justify-between active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal flex-1 truncate">Total Budget</p>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-secondary-text text-base font-normal leading-normal">$4,500</p>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 py-4 justify-between active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">group</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal flex-1 truncate">Manage members</p>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center -space-x-2 mr-1">
+<img alt="Avatar of a woman" class="w-6 h-6 rounded-full border border-white dark:border-card-dark" data-alt="Avatar of user Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpsRQSv0T7DcaPKzuesl4UQaIm5uEov0k9zwji_Dh3vDomjYK78o7gu_5H4gTKbKV93PLDR5_35XCJs1ku9iG55Ov1iKQP3CevsxqWcsJfMlEEuytWhWvFeWJPDLk6OMls54Axf3GFxqMhhPYNhH4yVaWgrIjU0zP4O0fnuuS4TVbnyZHbf1xSS8vyTkdt3ww6lgT4JksHRaPmkZ0NuI8wab2u9A5e4rn82Q_6O_wvXB6keSziAhrf4gYznc1SGvt03RDvFkltQw"/>
+<img alt="Avatar of a man" class="w-6 h-6 rounded-full border border-white dark:border-card-dark" data-alt="Avatar of user Mike" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2iuA35beYsGeKvN6R-MB43bFeGhNr0kFaGKTsk-aDpKsQy6TwxwGebyYPHE5xSGyA52KTZcZZbpM5qKs_fsQMDjSGBbx3v_OUrJzOdKNRAZ2m6l7ZDxoRH3K3jXM1d_fWdGLSuPXLkVrKmPx3Eln7q8g2R3fA6D3ZTYKgITWPsTreWp9GHtxB6LK8iIhELdBOrSBEJK2nsVi0wqCVQ8KqmsNuANyqyj_T0vC2e8fkWmI4PZkAMIqXtaUV5wq8SztDPEYl_H4PETw"/>
+<img alt="Avatar of a woman" class="w-6 h-6 rounded-full border border-white dark:border-card-dark" data-alt="Avatar of user Jane" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50sWi0PS7nrQQzuUv2Cz7E0nqEb_fWarrZmcHKHS7Sh9vEsRe-Y9XUQTjqr9tErhkT1oFK5cN6QX9K_iHgN0PJ5T5UNL0bNP-1dpm5Gmhv-r6WDS-vEISUzqVQgocbchxW5pEhwqI3o1xsKFFErM8TpZ5t45pnwkClbiHU207vndOCBR24mirquaDILt-hTOXfBbCJstnbVFCl_bnc75O_b1tAvUm_Eb2rSsMVTC4xPCo6-1gUboLsFL4aWndgfXaHl2KyDee0Nw"/>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 py-4 justify-between active:bg-gray-50 dark:active:bg-gray-800 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-slate-500 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 shrink-0 size-10">
+<span class="material-symbols-outlined">archive</span>
+</div>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal flex-1 truncate">Archive trip</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center text-secondary-text text-xs mt-6 mb-8">Trip created on Aug 12, 2024</p>
+</main>
+<div class="sticky bottom-0 left-0 right-0 bg-card-light dark:bg-card-dark border-t border-gray-100 dark:border-gray-800 pt-2 px-6 z-50">
+<div class="flex justify-between items-center max-w-lg mx-auto h-[60px]">
+<button class="flex flex-col items-center justify-center gap-1 text-secondary-text hover:text-primary w-16 group transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-1 transition-transform">map</span>
+<span class="text-[10px] font-medium">Itinerary</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-secondary-text hover:text-primary w-16 group transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-1 transition-transform">receipt_long</span>
+<span class="text-[10px] font-medium">Expenses</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-secondary-text hover:text-primary w-16 group transition-colors">
+<span class="material-symbols-outlined text-[26px] group-hover:-translate-y-1 transition-transform">pie_chart</span>
+<span class="text-[10px] font-medium">Split</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-primary w-16 group transition-colors">
+<span class="material-symbols-outlined text-[26px] filled group-hover:-translate-y-1 transition-transform">settings</span>
+<span class="text-[10px] font-medium">Setting</span>
+</button>
+</div>
+<div class="h-[34px] w-full bg-transparent"></div>
+</div>
+</body></html>
