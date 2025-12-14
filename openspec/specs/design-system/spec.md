@@ -1,5 +1,6 @@
 # Design System Specification
 
+## Purpose
 This spec defines the visual language for Travely. ALL UI implementations MUST reference this spec.
 
 ## Design References
@@ -8,8 +9,9 @@ All designs are located in `travely-design/` folder. Each subfolder contains:
 - `screen.png` - **SECONDARY**: Visual reference for layout verification
 
 **AI Implementation Rule**: Read `code.html` FIRST to extract design tokens from the `tailwind.config` block, then use `screen.png` to verify visual appearance.
+## Requirements
 
-## Color Palette
+**Color Palette**
 
 ### Requirement: Brand Colors
 The app SHALL use these exact colors consistently.
@@ -26,7 +28,7 @@ The app SHALL use these exact colors consistently.
 - **WHEN** showing error states (logout, delete, overdue)
 - **THEN** use Error Red: `#E53935`
 
-### Color Tokens
+**Color Tokens**
 | Token | Hex | Usage |
 |-------|-----|-------|
 | primary | #3182ED | Buttons, links, active tabs |
@@ -49,7 +51,7 @@ The app SHALL use these exact colors consistently.
 
 ---
 
-## Typography
+**Typography**
 
 ### Requirement: Typography Scale
 The app SHALL use a consistent type scale.
@@ -66,7 +68,7 @@ The app SHALL use a consistent type scale.
 - **WHEN** displaying captions or hints
 - **THEN** use Caption: 12px, Regular (400)
 
-### Typography Tokens
+**Typography Tokens**
 | Token | Size | Weight | Line Height | Font Family |
 |-------|------|--------|-------------|-------------|
 | displayLarge | 32px | Bold | 1.2 | Plus Jakarta Sans |
@@ -81,7 +83,7 @@ The app SHALL use a consistent type scale.
 
 ---
 
-## Spacing
+**Spacing**
 
 ### Requirement: Consistent Spacing
 The app SHALL use an 4px base spacing system.
@@ -90,7 +92,7 @@ The app SHALL use an 4px base spacing system.
 - **WHEN** adding padding inside components
 - **THEN** use multiples of 4px: 4, 8, 12, 16, 20, 24, 32, 48
 
-### Spacing Tokens
+**Spacing Tokens**
 | Token | Value | Usage |
 |-------|-------|-------|
 | xs | 4px | Tight spacing, icon gaps |
@@ -103,7 +105,7 @@ The app SHALL use an 4px base spacing system.
 
 ---
 
-## Border Radius
+**Border Radius**
 
 ### Requirement: Rounded Corners
 The app SHALL use consistent border radius values.
@@ -122,10 +124,10 @@ The app SHALL use consistent border radius values.
 
 ---
 
-## Components
+**Components**
 
 ### Requirement: Primary Button
-Refer to: `travely-design/welcome_/_value_proposition/screen.png` (Start Planning button)
+The component SHALL match the design reference at: `travely-design/welcome_/_value_proposition/screen.png` (Start Planning button)
 
 #### Scenario: Primary button renders correctly
 - **WHEN** rendering a primary action button
@@ -136,7 +138,7 @@ Refer to: `travely-design/welcome_/_value_proposition/screen.png` (Start Plannin
 - **AND** horizontal padding SHALL be 32px
 
 ### Requirement: Input Field
-Refer to: `travely-design/sign_up_/_login/screen.png` (Email/Password fields)
+The component SHALL match the design reference at: `travely-design/sign_up_/_login/screen.png` (Email/Password fields)
 
 #### Scenario: Input field renders correctly
 - **WHEN** rendering a text input
@@ -147,7 +149,7 @@ Refer to: `travely-design/sign_up_/_login/screen.png` (Email/Password fields)
 - **AND** label SHALL be above the field, 14px, secondary color
 
 ### Requirement: Card Component
-Refer to: `travely-design/trips_list_3/screen.png` (Trip cards)
+The component SHALL match the design reference at: `travely-design/trips_list_3/screen.png` (Trip cards)
 
 #### Scenario: Card renders correctly
 - **WHEN** rendering a content card
@@ -157,7 +159,7 @@ Refer to: `travely-design/trips_list_3/screen.png` (Trip cards)
 - **AND** padding SHALL be 16px
 
 ### Requirement: Status Badge
-Refer to: `travely-design/trips_list_3/screen.png` (Planning/Confirmed badges)
+The component SHALL match the design reference at: `travely-design/trips_list_3/screen.png` (Planning/Confirmed badges)
 
 #### Scenario: Status badge renders correctly
 - **WHEN** showing "Planning" status
@@ -168,7 +170,7 @@ Refer to: `travely-design/trips_list_3/screen.png` (Planning/Confirmed badges)
 - **AND** text SHALL be success (#34C759)
 
 ### Requirement: Avatar Stack
-Refer to: `travely-design/trips_list_3/screen.png` (Member avatars on trip cards)
+The component SHALL match the design reference at: `travely-design/trips_list_3/screen.png` (Member avatars on trip cards)
 
 #### Scenario: Avatar stack renders correctly
 - **WHEN** showing multiple member avatars
@@ -178,7 +180,7 @@ Refer to: `travely-design/trips_list_3/screen.png` (Member avatars on trip cards
 - **AND** maximum visible SHALL be 3, then show "+N"
 
 ### Requirement: Bottom Navigation
-Refer to: `travely-design/itinerary_overview_(timeline_view)/screen.png`
+The component SHALL match the design reference at: `travely-design/itinerary_overview_(timeline_view)/screen.png`
 
 #### Scenario: Bottom nav renders correctly
 - **WHEN** showing trip detail bottom navigation
@@ -189,9 +191,9 @@ Refer to: `travely-design/itinerary_overview_(timeline_view)/screen.png`
 
 ---
 
-## Shadows
+**Shadows**
 
-### Shadow Tokens
+**Shadow Tokens**
 | Token | Value | Usage |
 |-------|-------|-------|
 | sm | 0 1px 2px rgba(0,0,0,0.05) | Subtle elevation |
@@ -201,7 +203,7 @@ Refer to: `travely-design/itinerary_overview_(timeline_view)/screen.png`
 
 ---
 
-## Animation
+**Animation**
 
 ### Requirement: Smooth Transitions
 The app SHALL use consistent animation durations.
@@ -216,7 +218,7 @@ The app SHALL use consistent animation durations.
 
 ---
 
-## Implementation Checklist
+**Implementation Checklist**
 
 Before implementing any screen, AI MUST:
 1. [ ] Read the corresponding `screen.png` in `travely-design/`
@@ -224,3 +226,176 @@ Before implementing any screen, AI MUST:
 3. [ ] Use exact color hex values from Color Tokens
 4. [ ] Use exact sizes from Typography/Spacing tokens
 5. [ ] Match component specifications exactly
+
+### Requirement: Primary Button Component
+The app SHALL provide a reusable primary button matching the design.
+Reference: `travely-design/welcome_/_value_proposition/screen.png`
+
+#### Scenario: Primary button renders correctly
+- **WHEN** rendering a primary action button
+- **THEN** height SHALL be 56px
+- **AND** background SHALL be primary color
+- **AND** text SHALL be white, button text style
+- **AND** corners SHALL be fully rounded (pill shape)
+- **AND** button SHALL have subtle shadow
+
+#### Scenario: Primary button shows loading state
+- **WHEN** button is in loading state
+- **THEN** text SHALL be replaced with circular progress indicator
+- **AND** button SHALL be disabled
+
+#### Scenario: Primary button handles disabled state
+- **WHEN** button is disabled
+- **THEN** opacity SHALL be reduced
+- **AND** button SHALL not respond to taps
+
+---
+
+### Requirement: Secondary Button Component
+The app SHALL provide a secondary button with outline style.
+Reference: `travely-design/sign_up_/_login/screen.png`
+
+#### Scenario: Secondary button renders correctly
+- **WHEN** rendering a secondary action button
+- **THEN** background SHALL be transparent or white
+- **AND** border SHALL be 1px primary color or gray
+- **AND** text SHALL be primary color or dark
+
+---
+
+### Requirement: Social Login Buttons
+The app SHALL provide Google and Apple sign-in buttons.
+Reference: `travely-design/sign_up_/_login/screen.png`
+
+#### Scenario: Google button renders correctly
+- **WHEN** rendering Google sign-in button
+- **THEN** button SHALL show Google logo
+- **AND** background SHALL be white with border
+- **AND** text SHALL say "Continue with Google"
+
+#### Scenario: Apple button renders correctly
+- **WHEN** rendering Apple sign-in button
+- **THEN** button SHALL show Apple logo
+- **AND** background SHALL be black
+- **AND** text SHALL be white, say "Continue with Apple"
+
+---
+
+### Requirement: Text Input Field Component
+The app SHALL provide a reusable text input field.
+Reference: `travely-design/sign_up_/_login/screen.png`
+
+#### Scenario: Input field renders correctly
+- **WHEN** rendering a text input
+- **THEN** height SHALL be 56px
+- **AND** background SHALL be light gray or white with border
+- **AND** border-radius SHALL be 12px
+- **AND** label SHALL appear above the field
+
+#### Scenario: Input field shows error state
+- **WHEN** input has validation error
+- **THEN** border SHALL be error color
+- **AND** error message SHALL appear below field
+
+#### Scenario: Password field has visibility toggle
+- **WHEN** rendering a password input
+- **THEN** eye icon SHALL toggle password visibility
+
+---
+
+### Requirement: App Card Component
+The app SHALL provide a reusable card container.
+Reference: `travely-design/trips_list_3/screen.png`
+
+#### Scenario: Card renders with consistent style
+- **WHEN** rendering a content card
+- **THEN** background SHALL be white
+- **AND** border-radius SHALL be 16px
+- **AND** shadow SHALL be subtle elevation
+- **AND** padding SHALL be 16px
+
+---
+
+### Requirement: Status Badge Component
+The app SHALL provide status badges for different states.
+Reference: `travely-design/trips_list_3/screen.png`
+
+#### Scenario: Planning badge renders correctly
+- **WHEN** showing "Planning" status
+- **THEN** background SHALL be warning light color
+- **AND** text SHALL be warning color
+
+#### Scenario: Confirmed badge renders correctly
+- **WHEN** showing "Confirmed" status
+- **THEN** background SHALL be success light color
+- **AND** text SHALL be success color
+
+#### Scenario: Done badge renders correctly
+- **WHEN** showing "Done" status
+- **THEN** background SHALL be success light color
+- **AND** text SHALL be success color
+
+---
+
+### Requirement: Avatar Component
+The app SHALL provide avatar display components.
+Reference: `travely-design/trips_list_3/screen.png`
+
+#### Scenario: Avatar displays image correctly
+- **WHEN** user has profile image
+- **THEN** circular image SHALL be displayed
+- **AND** size SHALL be configurable (default 40px)
+
+#### Scenario: Avatar shows initials fallback
+- **WHEN** user has no profile image
+- **THEN** initials SHALL be displayed on colored background
+
+---
+
+### Requirement: Avatar Stack Component
+The app SHALL display overlapping avatars for group members.
+Reference: `travely-design/trips_list_3/screen.png`
+
+#### Scenario: Avatar stack renders correctly
+- **WHEN** showing multiple member avatars
+- **THEN** avatars SHALL overlap by 8px
+- **AND** each avatar SHALL have white border
+- **AND** maximum 3 avatars shown, then "+N" indicator
+
+---
+
+### Requirement: Bottom Navigation Component
+The app SHALL provide bottom navigation for trip detail screens.
+Reference: `travely-design/itinerary_overview_(timeline_view)/screen.png`
+
+#### Scenario: Bottom nav renders correctly
+- **WHEN** showing trip detail navigation
+- **THEN** items SHALL be: Itinerary, Expenses, Split, Setting
+- **AND** active item SHALL use primary color
+- **AND** inactive items SHALL use secondary color
+- **AND** icons SHALL be consistent size (24px)
+
+---
+
+### Requirement: Segmented Control Component
+The app SHALL provide a segmented control for binary choices.
+Reference: `travely-design/add_expense_-_production_ready_v3_2/screen.png`
+
+#### Scenario: Segmented control renders correctly
+- **WHEN** showing two options (e.g., "During Trip" / "Pre-trip")
+- **THEN** options SHALL be in pill-shaped container
+- **AND** selected option SHALL have white background
+- **AND** unselected option SHALL have transparent background
+
+---
+
+### Requirement: Confirmation Dialog Component
+The app SHALL provide a reusable confirmation dialog.
+Reference: `travely-design/trips_list_2/screen.png` (logout dialog)
+
+#### Scenario: Confirmation dialog renders correctly
+- **WHEN** showing a destructive action confirmation
+- **THEN** dialog SHALL have icon, title, description
+- **AND** primary action button SHALL be colored appropriately (red for destructive)
+- **AND** cancel button SHALL be secondary style
+
