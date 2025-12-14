@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
 
@@ -115,8 +115,7 @@ class WelcomeScreen extends ConsumerWidget {
                           const Icon(Icons.travel_explore, color: AppColors.primary, size: 20),
                           const SizedBox(width: 8),
                           Text(
-                            'CALM JOURNEY', // App name from design is Calm Journey, but our app is Travely. Keeping consistent with design for now or branding?
-                            // OpenSpec says Travely. Let's use Travely.
+                            // OpenSpec says Travely.
                             'TRAVELY', 
                             style: AppTypography.textTheme.labelMedium?.copyWith(
                               fontWeight: FontWeight.bold,

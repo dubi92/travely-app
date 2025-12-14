@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../data/auth_repository.dart';
@@ -17,33 +18,32 @@ final currentUserProvider = Provider<User?>((ref) {
   return authState?.session?.user ?? ref.watch(authRepositoryProvider).currentUser;
 });
 
-// A StateNotifier to manage sign-in loading and error state
-class AuthController extends StateNotifier<AsyncValue<void>> {
-  final AuthRepository _repository;
-
-  AuthController(this._repository) : super(const AsyncData(null));
+// An AsyncNotifier to manage sign-in loading and error state
+class AuthController extends AsyncNotifier<void> {
+  @override
+  FutureOr<void> build() {
+    // Initial state is null (data)
+    return null;
+  }
 
   Future<void> signInWithGoogle() async {
     state = const AsyncLoading();
-    try {
-      await _repository.signInWithGoogle();
-      state = const AsyncData(null);
-    } catch (e, st) {
-      state = AsyncError(e, st);
-    }
+    state = await AsyncValue.guard(() async {
+      await ref.read(authRepositoryProvider).signInWithGoogle();
+    });
   }
 
   Future<void> signOut() async {
     state = const AsyncLoading();
     try {
-      await _repository.signOut();
-      state = const AsyncData(null);
+      await ref.read(authRepositoryProvider).signOut();
+      state = const AsyncValue.data(null);
     } catch (e, st) {
-      state = AsyncError(e, st);
+      state = AsyncValue.error(e, st);
     }
   }
 }
 
-final authControllerProvider = StateNotifierProvider<AuthController, AsyncValue<void>>((ref) {
-  return AuthController(ref.watch(authRepositoryProvider));
+final authControllerProvider = AsyncNotifierProvider<AuthController, void>(() {
+  return AuthController();
 });
