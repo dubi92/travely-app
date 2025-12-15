@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travely - Illustrated Travel App Design</title>
+    <style>
+        /* ============================================
+           TRAVELY DESIGN SYSTEM - Cute Illustrated Style
+           ============================================ */
+        :root {
+            /* Primary Brand Colors */
+            --sky-blue: #9FD8E5;
+            --mint-green: #A8E6CF;
+            --soft-peach: #FFCBA4;
+            --pale-yellow: #FFF4B3;
+            --lavender: #DCC6E0;
+            
+            /* Background Colors */
+            --background: #E8F6F8;
+            --card-background: #FFFFFF;
+            --light-mint: #D4F1E3;
+            --light-peach: #FFE4CC;
+            --light-yellow: #FFF9DC;
+            
+            /* Text Colors */
+            --dark-blue: #2C5F6F;
+            --text-primary: #3D5A5C;
+            --text-secondary: #6B8E93;
+            
+            /* Accent Colors */
+            --coral: #FF9F9F;
+            --orange: #FFB366;
+            --teal: #7DD3C0;
+            --blue: #80CFEC;
+            
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 12px;
+            --spacing-lg: 16px;
+            --spacing-xl: 20px;
+            --spacing-xxl: 24px;
+            --spacing-xxxl: 32px;
+            --spacing-huge: 40px;
+            
+            /* Border Radius */
+            --radius-small: 16px;
+            --radius-medium: 20px;
+            --radius-large: 24px;
+            --radius-xlarge: 32px;
+            --radius-round: 999px;
+            
+            /* Shadows */
+            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(180deg, 
+                rgba(159, 216, 229, 0.3) 0%, 
+                rgba(168, 230, 207, 0.3) 100%);
+            min-height: 100vh;
+            padding: var(--spacing-xl);
+        }
+        
+        /* ============================================
+           CONTAINER
+           ============================================ */
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        
+        /* ============================================
+           HEADER WITH MASCOT
+           ============================================ */
+        .app-header {
+            background: linear-gradient(135deg, var(--sky-blue), var(--mint-green));
+            border-radius: var(--radius-large);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxxl);
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .mascot-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: var(--spacing-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .app-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.3px;
+        }
+        
+        /* ============================================
+           PAGE HEADING
+           ============================================ */
+        .page-heading {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark-blue);
+            margin-bottom: var(--spacing-xxl);
+            letter-spacing: -0.5px;
+        }
+        
+        /* ============================================
+           ILLUSTRATED TRIP CARD
+           ============================================ */
+        .trip-card {
+            background: white;
+            border-radius: var(--radius-large);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .trip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Illustration Area */
+        .card-illustration {
+            position: relative;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .card-illustration.peach {
+            background: var(--soft-peach);
+        }
+        
+        .card-illustration.mint {
+            background: var(--light-mint);
+        }
+        
+        .card-illustration.yellow {
+            background: var(--pale-yellow);
+        }
+        
+        /* Clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            animation: cloud-float 4s ease-in-out infinite;
+        }
+        
+        .cloud-1 {
+            width: 50px;
+            height: 30px;
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+        
+        .cloud-2 {
+            width: 40px;
+            height: 24px;
+            top: 15px;
+            right: 40px;
+            animation-delay: 1s;
+        }
+        
+        .cloud-3 {
+            width: 35px;
+            height: 21px;
+            bottom: 30px;
+            left: 60px;
+            animation-delay: 2s;
+        }
+        
+        @keyframes cloud-float {
+            0%, 100% { transform: translateX(0px); }
+            50% { transform: translateX(10px); }
+        }
+        
+        /* Balloon Mascot */
+        .balloon-mascot {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 50px;
+            height: 60px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: balloon-sway 2s ease-in-out infinite;
+        }
+        
+        @keyframes balloon-sway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        /* Main Illustration */
+        .main-illustration {
+            font-size: 50px;
+            z-index: 1;
+            display: flex;
+            gap: 20px;
+        }
+        
+        /* Card Content */
+        .card-content {
+            padding: var(--spacing-xl);
+        }
+        
+        .card-content.peach-bg {
+            background: rgba(255, 203, 164, 0.15);
+        }
+        
+        .card-content.mint-bg {
+            background: rgba(168, 230, 207, 0.15);
+        }
+        
+        .card-content.yellow-bg {
+            background: rgba(255, 244, 179, 0.15);
+        }
+        
+        .card-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .trip-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+        
+        .trip-dates {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 12px;
+            background: var(--dark-blue);
+            color: white;
+            border-radius: var(--radius-round);
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .badge-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* ============================================
+           CIRCULAR MENU (Home Screen Style)
+           ============================================ */
+        .home-screen {
+            text-align: center;
+            padding: var(--spacing-huge) 0;
+        }
+        
+        .hero-mascot {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 8px 20px rgba(159, 216, 229, 0.3);
+            margin-bottom: var(--spacing-xl);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .hero-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark-blue);
+            margin-bottom: var(--spacing-huge);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xxl);
+            padding: var(--spacing-xxxl);
+        }
+        
+        .menu-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .menu-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-button:hover .menu-circle {
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .menu-circle.peach { background: var(--light-peach); }
+        .menu-circle.yellow { background: var(--pale-yellow); }
+        .menu-circle.mint { background: var(--light-mint); }
+        .menu-circle.blue { background: var(--sky-blue); }
+        
+        .menu-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark-blue);
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .tagline {
+            display: inline-block;
+            background: white;
+            padding: var(--spacing-md) var(--spacing-xxl);
+            border-radius: var(--radius-round);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        /* ============================================
+           FLOATING ACTION BUTTON
+           ============================================ */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: 0 4px 16px rgba(255, 159, 159, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 6px 20px rgba(255, 159, 159, 0.6);
+        }
+        
+        /* ============================================
+           TABS
+           ============================================ */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxxl);
+        }
+        
+        .tab {
+            padding: var(--spacing-md) var(--spacing-xxl);
+            background: white;
+            border: 2px solid var(--sky-blue);
+            border-radius: var(--radius-round);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-blue);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: var(--sky-blue);
+            color: white;
+        }
+        
+        .tab:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HOME SCREEN DEMO
+         ============================================ -->
+    <div class="container" id="home-screen">
+        <div class="home-screen">
+            <div class="hero-mascot">🎈</div>
+            <h1 class="hero-title">Travely</h1>
+            
+            <div class="menu-grid">
+                <a href="#" class="menu-button">
+                    <div class="menu-circle peach">🔍</div>
+                    <div class="menu-label">Find<br>Adventure!</div>
+                </a>
+                
+                <a href="#" class="menu-button">
+                    <div class="menu-circle yellow">🧳</div>
+                    <div class="menu-label">Pack<br>Your Bags</div>
+                </a>
+                
+                <a href="#" class="menu-button">
+                    <div class="menu-circle mint">💬</div>
+                    <div class="menu-label">Share<br>Journeys</div>
+                </a>
+                
+                <a href="#" class="menu-button">
+                    <div class="menu-circle blue">👤</div>
+                    <div class="menu-label">My<br>Profile</div>
+                </a>
+            </div>
+            
+            <div class="tagline">Wanderlust Wonders!</div>
+        </div>
+    </div>
+    
+    <!-- ============================================
+         MY TRIPS SCREEN DEMO
+         ============================================ -->
+    <div class="container" id="trips-screen" style="display: none;">
+        <div class="app-header">
+            <div class="mascot-circle">🎈</div>
+            <div class="app-title">Travely</div>
+        </div>
+        
+        <h1 class="page-heading">My Trips</h1>
+        
+        <!-- Japan Trip -->
+        <div class="trip-card">
+            <div class="card-illustration peach">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="balloon-mascot">🎈</div>
+                <div class="main-illustration">
+                    <span>🌸</span>
+                    <span>🏯</span>
+                </div>
+            </div>
+            <div class="card-content peach-bg">
+                <div class="card-header-row">
+                    <div>
+                        <div class="trip-title">Adventure in Japan</div>
+                        <div class="trip-dates">October 15 - Outter 22</div>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">📷</span>
+                        <span>8 Photos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- California Trip -->
+        <div class="trip-card">
+            <div class="card-illustration mint">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="balloon-mascot">🎈</div>
+                <div class="main-illustration">
+                    <span>🏖️</span>
+                    <span>🌴</span>
+                    <span style="font-size: 35px;">☀️</span>
+                </div>
+            </div>
+            <div class="card-content mint-bg">
+                <div class="card-header-row">
+                    <div>
+                        <div class="trip-title">California Coastline</div>
+                        <div class="trip-dates">November 5 - Outter 10</div>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🏃</span>
+                        <span>Activities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Europe Trip -->
+        <div class="trip-card">
+            <div class="card-illustration yellow">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="balloon-mascot">🎈</div>
+                <div class="main-illustration">
+                    <span style="font-size: 40px;">🏛️</span>
+                    <span>🗼</span>
+                    <span style="font-size: 40px;">🏰</span>
+                </div>
+            </div>
+            <div class="card-content yellow-bg">
+                <div class="card-header-row">
+                    <div>
+                        <div class="trip-title">European Cities</div>
+                        <div class="trip-dates">December 1 - Outter 14</div>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">✈️</span>
+                        <span>Flights Booked</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Action Button -->
+        <div class="fab">+</div>
+    </div>
+    
+    <!-- Tab Switcher -->
+    <div class="container" style="margin-top: 20px;">
+        <div class="tabs">
+            <div class="tab active" onclick="showScreen('home')">Home Screen</div>
+            <div class="tab" onclick="showScreen('trips')">My Trips</div>
+        </div>
+    </div>
+    
+    <script>
+        function showScreen(screen) {
+            // Hide all screens
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('trips-screen').style.display = 'none';
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected screen
+            if (screen === 'home') {
+                document.getElementById('home-screen').style.display = 'block';
+                document.querySelectorAll('.tab')[0].classList.add('active');
+            } else {
+                document.getElementById('trips-screen').style.display = 'block';
+                document.querySelectorAll('.tab')[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
