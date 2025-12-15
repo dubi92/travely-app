@@ -35,3 +35,9 @@ export 'feedback/loading_indicator.dart';
 export 'feedback/empty_state.dart';
 export 'feedback/error_state.dart';
 export 'feedback/confirmation_dialog.dart';
+
+export 'glass_card.dart';
+export 'decorative_background.dart';
+export 'floating_mascot.dart';
+export 'playful_badge.dart';
+export 'day_tabs.dart';

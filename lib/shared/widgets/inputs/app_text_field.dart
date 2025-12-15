@@ -12,6 +12,10 @@ class AppTextField extends StatelessWidget {
   final String? errorText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+  final FormFieldValidator<String>? validator;
+  final int maxLines;
+  final bool readOnly;
+  final VoidCallback? onTap;
 
   const AppTextField({
     super.key,
@@ -24,6 +28,10 @@ class AppTextField extends StatelessWidget {
     this.errorText,
     this.suffixIcon,
     this.prefixIcon,
+    this.validator,
+    this.maxLines = 1,
+    this.readOnly = false,
+    this.onTap,
   });
 
   @override
@@ -46,22 +54,26 @@ class AppTextField extends StatelessWidget {
             ),
           ),
         ],
-        SizedBox(
-          height: 56, // h-14
-          child: TextField(
-            controller: controller,
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            onChanged: onChanged,
-            style: AppTypography.textTheme.bodyLarge?.copyWith(
-              color: isDark ? Colors.white : AppColors.textPrimaryLight,
-            ),
-            decoration: InputDecoration(
-              hintText: placeholder,
-              errorText: errorText,
-              suffixIcon: suffixIcon,
-              prefixIcon: prefixIcon,
-            ),
+        // Removed fixed height to allow error text and multiline
+        TextFormField(
+          controller: controller,
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          onChanged: onChanged,
+          validator: validator,
+          maxLines: maxLines,
+          readOnly: readOnly,
+          onTap: onTap,
+          style: AppTypography.textTheme.bodyLarge?.copyWith(
+            color: isDark ? Colors.white : AppColors.textPrimaryLight,
+          ),
+          decoration: InputDecoration(
+            hintText: placeholder, // Maps usage of placeholder to hintText
+            errorText: errorText,
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           ),
         ),
       ],

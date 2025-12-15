@@ -45,4 +45,23 @@ class AppColors {
   // Components using specific values
   static const Color inputBackgroundLight = Color(0xFFFFFFFF);
   static const Color inputBackgroundDark = Color(0xFF374151);
+
+  // Playful Design Tokens (OpenSpec 010)
+  // Gradients
+  static const Color bgGradientStart = Color(0xFFD4F1E3);
+  static const Color bgGradientEnd = Color(0xFFE8F6F8);
+
+  // Card Variants
+  static const Color cardMint = Color(0xFFA8E6CF);
+  static const Color cardPeach = Color(0xFFFFCBA4);
+  static const Color cardLight = Color(0xCCFFFFFF); // Semi-transparent white
+
+  // Playful Status
+  static const Color statusDone = Color(0xFF7FD4A8);
+  static const Color statusBooked = Color(0xFF80CFEC);
+  static const Color statusPlanned = Color(0xFFFFB366);
+
+  // Playful Text
+  static const Color playfulTextPrimary = Color(0xFF2C5F6F);
+  static const Color playfulTextSecondary = Color(0xFF6B8E93);
 }
