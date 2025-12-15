@@ -6,6 +6,14 @@ import '../../features/auth/presentation/screens/welcome_screen.dart';
 import '../../features/profile/presentation/providers/profile_provider.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/profile/presentation/screens/permissions_screen.dart';
+import '../../features/trips/presentation/screens/create_trip_step1_screen.dart';
+import '../../features/trips/presentation/screens/create_trip_step2_screen.dart';
+import '../../features/trips/presentation/screens/create_trip_step3_screen.dart';
+import '../../features/trips/presentation/screens/trip_settings_screen.dart';
+import '../../features/trips/presentation/screens/manage_members_screen.dart';
+import '../../features/trips/presentation/screens/join_trip_screen.dart';
+import '../../features/trips/presentation/screens/home_screen.dart';
+import '../../features/trips/presentation/screens/trip_detail_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   // Use a Notifier to trigger router refreshes
@@ -67,6 +75,20 @@ final routerProvider = Provider<GoRouter>((ref) {
     },
     routes: [
       GoRoute(
+        path: '/trips/create',
+        builder: (context, state) => const CreateTripStep1Screen(),
+        routes: [
+           GoRoute(
+            path: 'step2',
+            builder: (context, state) => const CreateTripStep2Screen(),
+          ),
+          GoRoute(
+            path: 'step3',
+            builder: (context, state) => const CreateTripStep3Screen(),
+          ),
+        ]
+      ),
+      GoRoute(
         path: '/welcome',
         builder: (context, state) => const WelcomeScreen(),
       ),
@@ -79,27 +101,52 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/',
         builder: (context, state) => Scaffold(
-          appBar: AppBar(
-            title: const Text('Travely'),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.person),
-                onPressed: () => context.push('/profile'),
-              ),
-            ],
-          ),
-          body: const Center(child: Text('Home Screen')),
+          appBar: null, // HomeScreen has its own SliverAppBar
+          body: const HomeScreen(),
         ),
         routes: [
           GoRoute(
             path: 'profile',
             builder: (context, state) => const ProfileScreen(),
           ),
+          GoRoute(
+            path: 'trips/:id',
+            builder: (context, state) {
+               final id = state.pathParameters['id']!;
+               return TripDetailScreen(tripId: id);
+            },
+            routes: [
+               GoRoute(
+                path: 'settings',
+                builder: (context, state) {
+                   final id = state.pathParameters['id']!;
+                   return TripSettingsScreen(tripId: id);
+                },
+              ),
+              GoRoute(
+                path: 'members',
+                builder: (context, state) {
+                   final id = state.pathParameters['id']!;
+                   return ManageMembersScreen(tripId: id);
+                },
+              ),
+            ]
+          ),
         ],
       ),
+
       GoRoute(
         path: '/permissions',
         builder: (context, state) => const PermissionsScreen(),
+      ),
+
+
+      GoRoute(
+        path: '/join/:code',
+        builder: (context, state) {
+          final code = state.pathParameters['code'];
+          return JoinTripScreen(inviteCode: code);
+        },
       ),
     ],
   );

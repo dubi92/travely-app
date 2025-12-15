@@ -45,6 +45,8 @@
     <string>We need access to your photo library to allow you to upload a profile picture.</string>
     <key>NSCameraUsageDescription</key>
     <string>We need access to your camera to allow you to take a profile picture.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to show where you are on the map.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -57,6 +59,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.873884863284-5nbagbpabs7b3a8sknokmkjitv7b3use</string>
+				<string>travely</string>
 			</array>
 		</dict>
 	</array>

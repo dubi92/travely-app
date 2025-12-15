@@ -3,7 +3,6 @@ import 'package:travely_app/core/theme/app_colors.dart';
 import 'package:travely_app/core/theme/app_radius.dart';
 import 'package:travely_app/core/theme/app_typography.dart';
 
-
 class PrimaryButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
@@ -31,11 +30,12 @@ class PrimaryButton extends StatelessWidget {
           elevation: 0,
           shadowColor: AppColors.primary.withValues(alpha: 0.25),
           shape: const RoundedRectangleBorder(
-            borderRadius: AppRadius.roundedXL, // rounded-xl for welcome button
+            borderRadius: AppRadius.roundedLG,
           ),
           padding: EdgeInsets.zero,
         ).copyWith(
-          shadowColor:  WidgetStateProperty.all(AppColors.primary.withValues(alpha: 0.25)),
+          shadowColor: WidgetStateProperty.all(
+              AppColors.primary.withValues(alpha: 0.25)),
           overlayColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
               return AppColors.primaryDark.withValues(alpha: 0.1);

@@ -14,8 +14,8 @@ class AppTheme {
         brightness: Brightness.light,
         primary: AppColors.primary,
         onPrimary: Colors.white,
-        secondary: AppColors.backgroundDark, // Using backgroundDark as secondary for contrast
-        onSecondary: Colors.white,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.textPrimaryLight,
         error: AppColors.error,
         onError: Colors.white,
         surface: AppColors.surfaceLight,
@@ -34,8 +34,10 @@ class AppTheme {
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: AppSpacing.md),
-          shape: const RoundedRectangleBorder(borderRadius: AppRadius.roundedLG),
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg, vertical: AppSpacing.md),
+          shape: const RoundedRectangleBorder(
+              borderRadius: AppRadius.roundedLG), // 16px
           textStyle: AppTypography.textTheme.labelLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -44,22 +46,37 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.inputBackgroundLight,
-        contentPadding: const EdgeInsets.all(AppSpacing.lg),
+        contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg, vertical: AppSpacing.md),
         border: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
-          borderSide: const BorderSide(color: AppColors.borderLight),
+          borderRadius: AppRadius.roundedMD, // 12px to match Create Trip
+          borderSide: BorderSide.none, // Match Create Trip (Borderless)
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
-          borderSide: const BorderSide(color: AppColors.borderLight),
+          borderRadius: AppRadius.roundedMD,
+          borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
+          borderRadius: AppRadius.roundedMD,
           borderSide: const BorderSide(color: AppColors.primary, width: 2),
         ),
         hintStyle: AppTypography.textTheme.bodyMedium?.copyWith(
           color: AppColors.textSecondaryLight,
         ),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return Colors.white;
+          }
+          return null;
+        }),
+        trackColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return AppColors.secondary; // Mint
+          }
+          return null;
+        }),
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.backgroundLight.withValues(alpha: 0.9),
@@ -77,7 +94,7 @@ class AppTheme {
         surfaceTintColor: Colors.transparent,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(borderRadius: AppRadius.roundedLG),
-        elevation: 0, 
+        elevation: 0,
       ),
     );
   }
@@ -110,8 +127,10 @@ class AppTheme {
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
           elevation: 0,
-          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg, vertical: AppSpacing.md),
-          shape: const RoundedRectangleBorder(borderRadius: AppRadius.roundedLG),
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg, vertical: AppSpacing.md),
+          shape:
+              const RoundedRectangleBorder(borderRadius: AppRadius.roundedLG),
           textStyle: AppTypography.textTheme.labelLarge?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -120,22 +139,37 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.inputBackgroundDark,
-        contentPadding: const EdgeInsets.all(AppSpacing.lg),
+        contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg, vertical: AppSpacing.md),
         border: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
-          borderSide: const BorderSide(color: AppColors.borderDark),
+          borderRadius: AppRadius.roundedMD,
+          borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
-          borderSide: const BorderSide(color: AppColors.borderDark),
+          borderRadius: AppRadius.roundedMD,
+          borderSide: BorderSide.none,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: AppRadius.roundedLG,
+          borderRadius: AppRadius.roundedMD,
           borderSide: const BorderSide(color: AppColors.primary, width: 2),
         ),
         hintStyle: AppTypography.textTheme.bodyMedium?.copyWith(
           color: AppColors.textSecondaryDark,
         ),
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return Colors.white; // Brand Dark Blue
+          }
+          return null;
+        }),
+        trackColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return AppColors.secondary; // Mint
+          }
+          return null;
+        }),
       ),
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.backgroundDark.withValues(alpha: 0.9),
